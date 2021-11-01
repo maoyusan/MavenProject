@@ -15,6 +15,7 @@ public class UsersMapperTest extends TestCase {
     {
 //test2222
 //test2222
+//test2222
 
         sqlSession = MybatisUtils.getSqlSession();
         mapper = sqlSession.getMapper(UsersMapper.class);
