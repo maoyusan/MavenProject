@@ -13,6 +13,7 @@ public class UsersMapperTest extends TestCase {
     private final SqlSession sqlSession;
 
     {
+        //test333
         sqlSession = MybatisUtils.getSqlSession();
         mapper = sqlSession.getMapper(UsersMapper.class);
     }
@@ -49,6 +50,7 @@ public class UsersMapperTest extends TestCase {
         List<UserBean> usersPage = mapper.getUsersPage(0, 5);
         for (UserBean userBean : usersPage) {
             System.out.println(userBean);
+
         }
     }
 }
