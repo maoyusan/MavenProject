@@ -2,10 +2,11 @@ package pojo;
 
 import lombok.Data;
 
+import java.io.Serializable;
 import java.sql.Timestamp;
 
 @Data
-public class Blog {
+public class Blog implements Serializable {
 
     private String id;
     private String title;
