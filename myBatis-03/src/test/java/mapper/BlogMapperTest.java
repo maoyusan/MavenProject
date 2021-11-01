@@ -44,6 +44,9 @@ public class BlogMapperTest extends TestCase {
     public void testQueryBlog1() {
         ArrayList<Object> objects = new ArrayList<>();
         objects.add(1);
+        objects.add(2);
+        objects.add(3);
+        objects.add(4);
         HashMap<Object, Object> map = new HashMap<>();
         map.put("list", objects);
         List<Blog> blogs = mapper.queryBlog1(map);
