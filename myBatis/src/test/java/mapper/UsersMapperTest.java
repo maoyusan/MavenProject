@@ -13,6 +13,7 @@ public class UsersMapperTest extends TestCase {
     private final SqlSession sqlSession;
 
     {
+        //test
 //test2222
 //test2222
 //test2222
