@@ -15,4 +15,5 @@ public class Blog implements Serializable {
     private java.sql.Timestamp createTime;
     private long views;
 
+
 }
