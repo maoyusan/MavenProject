@@ -3,7 +3,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="mapper.BlogMapper">
-
+    <cache/>
     <sql id="select">
         select *
         from test.blog
@@ -39,7 +39,7 @@
         select *from test.blog
         <where>
 
-            <foreach collection="list" index="2"   item="id"  open="(" close=")" separator="or">
+            <foreach collection="list" item="id" open="(" close=")" separator="or">
                 id=#{id}
             </foreach>
         </where>
