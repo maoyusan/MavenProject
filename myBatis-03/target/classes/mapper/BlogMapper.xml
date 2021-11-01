@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mapper.BlogMapper">
+
+    <sql id="select">
+        select *
+        from test.blog
+        <where>
+            <choose>
+                <when test="id!=null">
+                    id=#{id};
+                </when>
+                <when test="title!=null">
+                    title=#{title};
+                </when>
+            </choose>
+        </where>
+
+    </sql>
+
+    <select id="queryBlogs" resultType="Blog">
+        <include refid="select"/>
+    </select>
+
+    <update id="updateBlogs">
+        update test.blog
+        <set>
+            <if test="title!=null">
+                title=#{title},
+            </if>
+        </set>
+        where id=#{id};
+
+    </update>
+
+    <select id="queryBlog1" resultType="Blog">
+        select *from test.blog
+        <where>
+
+            <foreach collection="list" index="2"   item="id"  open="(" close=")" separator="or">
+                id=#{id}
+            </foreach>
+        </where>
+    </select>
+
+</mapper>

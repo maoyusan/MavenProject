@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mapper.UsersMapper">
+
+    <select id="getUsers" resultType="userBean">
+        select*
+        from test.user;    </select>
+
+    <select id="getUsersPage" resultType="userBean">
+        select *
+        from test.user u
+        limit #{index},#{size};
+    </select>
+    <select id="getId" resultType="userBean">
+        select *
+        from test.user u
+        where id = #{id};
+    </select>
+
+    <insert id="addUser">
+        insert into test.user(name)
+        values (#{name});
+    </insert>
+
+    <delete id="deleteUser">
+        delete
+        from test.user
+        where id = #{id};
+    </delete>
+
+</mapper>
